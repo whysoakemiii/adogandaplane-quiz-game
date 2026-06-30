@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Dog And A Plane - Quiz Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&family=Prompt:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="quiz.js" defer></script>
+</head>
+
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+    <div class="mini-cloud cloud-1"></div>
+    <div class="mini-cloud cloud-2"></div>
+
+    <div class="main-content">
+
+        <div id="quiz-start-screen" class="menu-card" style="position: relative; overflow: visible;">
+            <div class="mini-cloud cloud-start-left"></div>
+            <div class="mini-cloud cloud-start-right"></div>
+            <div id="start-phase-1">
+                <h3 class="welcome-text">ยินดีต้อนรับสู่เที่ยวบิน ✈️</h3>
+                <h1 class="main-game-title">หมาเห่าเครื่องบิน Quiz Time! 🚨</h1>
+                <p class="game-description-top">พร้อมจะออกเดินทางไปทุกฉากที่คุณจำได้หรือยัง?</p>
+                <p class="game-subtitle-tag">- A Dog And A Plane Quiz Challenge -</p>
+
+                <button id="big-play-btn" class="big-play-button">
+                    <span class="play-triangle"></span>
+                </button>
+
+                <p class="click-to-play-text">กดปุ่มเพื่อเริ่มเล่นเกม</p>
+            </div>
+            <div id="start-phase-2" style="display: none;">
+                <h2 class="menu-title">⚡ ท่านผู้โดยสารโปรดทราบ! ⚡</h2>
+                <p class="menu-subtitle" style="margin-bottom: 20px;">
+                    เตรียมสติและความจำของท่านให้พร้อมและคาดเข็มขัดนิรภัยตลอดเวลาเพื่อความปลอดภัย</p>
+                <div class="rules-box">
+                    <p>📝 จำนวนคำถามทั้งหมด <b>20 ข้อ</b></p>
+                    <p>⏱️ จำกัดเวลาข้อละ <b>1 นาที (60 วินาที)</b></p>
+                    <p>❌ หากหมดเวลา ระบบจะนับว่าผิดและข้ามข้อทันที</p>
+                </div>
+                <button id="actual-start-btn" class="menu-btn btn-quiz"
+                    style="width: 100%; cursor: pointer;" onclick="openCaptcha()">เริ่มทำแบบทดสอบ</button>
+            </div>
+        </div>
+
+        <div id="quiz-active-screen" style="display: none; width: 100%; max-width: 750px;">
+            <div class="quiz-status-bar">
+                <div class="status-top-row">
+                    <div class="status-badge question-badge">
+                        📌 <span id="question-number">ข้อที่ 1/20</span>
+                    </div>
+                    <div class="status-badge timer-badge">
+                        ⏱️ เหลือ <span id="timer-text">60</span> วิ
+                    </div>
+                </div>
+                <div class="progress-track progress-blue">
+                    <div class="progress-fill" id="question-progress" style="width: 0%;"></div>
+                    <span class="progress-icon" id="question-icon">✈️</span>
+                </div>
+                <div class="progress-track progress-green">
+                    <div class="progress-fill" id="time-progress" style="width: 100%;"></div>
+                    <span class="progress-icon" id="time-icon">🚨</span>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <button id="play-audio-btn">🔊กดเพื่อฟังเสียง ☁️</button>
+                <img id="question-image" src="" alt="Quiz Image">
+                <p id="question-text">โจทย์คำถาม</p>
+                <audio id="question-audio" src=""></audio>
+            </div>
+
+            <div id="options-container" class="quiz-options-container"></div>
+        </div>
+
+        <div id="quiz-result-screen" class="menu-card" style="display: none; max-width: 600px;">
+            <h2 class="menu-title" style="font-size: 2.2rem;">รายงานสถานะผู้โดยสาร ✈️📡</h2>
+            <p class="menu-subtitle" style="margin-bottom: 24px;">สรุปภารกิจความทรงจำและความแม่นยำบนเที่ยวบินนี้</p>
+
+            <div class="result-inner-card">
+                <div id="result-badge" class="result-rank-badge"></div>
+                <p style="color: #8c7685; font-size: 1.1rem; font-weight: 700; margin-top: 14px;"></p>
+
+                <div class="score-display">
+                    <span id="final-score" class="score-pink">0</span>
+                    <span class="score-slash">/</span>
+                    <span id="total-questions" class="score-blue">20</span>
+                </div>
+
+                <p id="result-feedback" class="result-feedback-text"></p>
+            </div>
+
+            <button class="menu-btn btn-quote" style="width: 100%; margin-top: 20px; cursor: pointer;"
+                onclick="resetQuiz()">ทำแบบทดสอบอีกครั้ง 🔄</button>
+        </div>
+
+    </div>
+
+    <div id="captcha-modal" class="captcha-overlay" style="display: none;">
+        <div class="captcha-box">
+            <div class="captcha-flex-wrapper">
+                <div class="captcha-image-wrapper">
+                    <span class="captcha-text-distort">เตนิวเป็นแฟนกัน</span>
+                </div>
+                <div class="captcha-tools">
+                    <button class="captcha-tool-btn" type="button" onclick="alert('ชัดเจนขนาดนี้ยังต้องรีเฟรซอีกหรอคะ 55555555')">🔄</button>
+                    <button class="captcha-tool-btn" type="button" onclick="alert('อ่านพร้อมกันนะคะะ เต-นิว-เป็น-แฟน-กัน!')">🔊</button>
+                </div>
+            </div>
+            <p class="captcha-instruction">Type the word above</p>
+            <input type="text" id="captcha-input" placeholder="" autocomplete="off">
+            <button id="captcha-verify-btn" class="captcha-verify-btn">Verify</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        const dogImg = new Image();
+        dogImg.src = 'assets/images/dog.png'; 
+        const planeImg = new Image();
+        planeImg.src = 'assets/images/plane.png'; 
+
+        let particlesArray = [];
+        const numberOfParticles = 20; 
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height + canvas.height; 
+                this.size = Math.random() * 20 + 20; 
+                this.speedX = Math.random() * 0.6 - 0.3; 
+                this.speedY = -(Math.random() * 0.8 + 0.3); 
+                this.type = Math.random() > 0.5 ? 'dog' : 'plane'; 
+                this.opacity = Math.random() * 0.3 + 0.1; 
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.y < -this.size) {
+                    this.y = canvas.height + this.size;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity; 
+                if (this.type === 'dog') {
+                    ctx.drawImage(dogImg, this.x, this.y, this.size, this.size);
+                } else {
+                    ctx.drawImage(planeImg, this.x, this.y, this.size, this.size);
+                }
+                ctx.restore();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        dogImg.onload = () => {
+            initParticles();
+            animateParticles();
+        };
+    </script>
+
+    <div class="bottom-area">
+        <p class="footer-credit">Made By WHYSO @why__so_</p>
+    </div>
+
+</body>
+</html>
