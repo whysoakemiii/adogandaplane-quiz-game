@@ -120,10 +120,10 @@ const quizDatabase = [
         audio: "",
         level: "easy",
         options: [
-            { text: "อัคคี", img: "assets/images/akki.JPEG" },
-            { text: "เบียร์", img: "assets/images/beer.JPEG" },
-            { text: "ตอง", img: "assets/images/tong.JPEG" },
-            { text: "จ๊ะโอ", img: "assets/images/ja-o.JPEG" }
+            { text: "อัคคี", img: "assets/images/akki.png" },
+            { text: "เบียร์", img: "assets/images/beer.png" },
+            { text: "ตอง", img: "assets/images/tong.png" },
+            { text: "จ๊ะโอ", img: "assets/images/ja-o.png" }
         ],
         correct: [1]
     },
@@ -157,7 +157,7 @@ const quizDatabase = [
     },
     {
         question: "ในเวอร์ชันออกอากาศทางโทรทัศน์โตโต้โดนเซ็นเซอร์คำหยาบไปทั้งหมดกี่ครั้ง",
-        image: "assets/images/toto-14.JPEG",
+        image: "assets/images/toto-14.png",
         audio: "",
         level: "easy",
         options: [
@@ -222,7 +222,7 @@ const quizDatabase = [
     },
     {
         question: "ซีนนี้ EP. ไหน?",
-        image: "assets/images/ep-5-medium.JPEG",
+        image: "assets/images/ep-5-medium.png",
         audio: "",
         level: "medium",
         options: [
@@ -236,7 +236,7 @@ const quizDatabase = [
     },
     {
         question: "ซีนนี้ EP. ไหน?",
-        image: "assets/images/ep-4-medium.JPEG",
+        image: "assets/images/ep-4-medium.png",
         audio: "",
         level: "medium",
         options: [
@@ -292,7 +292,7 @@ const quizDatabase = [
     },
     {
         question: "ซีนนี้ EP. ไหน?",
-        image: "assets/images/ep-3-hard.JPEG",
+        image: "assets/images/ep-3-hard.png",
         audio: "",
         level: "hard",
         options: [
@@ -306,7 +306,7 @@ const quizDatabase = [
     },
     {
         question: "ซีนนี้ EP. ไหน?",
-        image: "assets/images/ep-4-hard.JPEG",
+        image: "assets/images/ep-4-hard.png",
         audio: "",
         level: "hard",
         options: [
@@ -343,7 +343,7 @@ const quizDatabase = [
         options: [
             { text: "", img: "assets/images/kanit-pink-choice.png" },
             { text: "", img: "assets/images/kanit-green-choice.png" },
-            { text: "", img: "assets/images/kanit-normal-choice.JPEG" },
+            { text: "", img: "assets/images/kanit-normal-choice.png" },
             { text: "", img: "assets/images/kanit-purple-choice.png" }
         ],
         correct: [2]
