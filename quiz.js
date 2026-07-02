@@ -89,7 +89,7 @@ const quizDatabase = [
         correct: [3]
     },
     {
-        question: "ก่อนคณิตที่จับว่าได้ว่าไลออนนอกใจ ทั้งคู่คบหากันมากี่ปี",
+        question: "ก่อนคณิตที่จับว่าได้ว่าไลออนนอกใจ ทั้งคู่คบกันมากี่ปี",
         image: "",
         audio: "",
         level: "easy",
@@ -115,18 +115,17 @@ const quizDatabase = [
         correct: [2]
     },
     {
-        question: "บุคคลใดไม่ใช่ทีมในภารกิจจับชู้ของโตโต้",
+        question: "ในภารกิจตายจับชู้ปฏิบัติการนพนภา ใครใดไม่ได้อยู่ในภารกิจ",
         image: "",
         audio: "",
         level: "easy",
         options: [
-            { text: "อัคคี", img: "" },
-            { text: "เบียร์", img: "" },
-            { text: "ลูกชิ้นปลาในหม้อสุกี้", img: "" },
-            { text: "ตอง", img: "" },
-            { text: "จ๊ะโอ", img: "" }
+            { text: "อัคคี", img: "assets/images/akki.JPEG" },
+            { text: "เบียร์", img: "assets/images/beer.JPEG" },
+            { text: "ตอง", img: "assets/images/tong.JPEG" },
+            { text: "จ๊ะโอ", img: "assets/images/ja-o.JPEG" }
         ],
-        correct: [2]
+        correct: [1]
     },
     {
         question: "ซีนนี้ EP. ไหน?",
@@ -157,6 +156,43 @@ const quizDatabase = [
         correct: [2]
     },
     {
+        question: "ในเวอร์ชันออกอากาศทางโทรทัศน์โตโต้โดนเซ็นเซอร์คำหยาบไปทั้งหมดกี่ครั้ง",
+        image: "assets/images/toto-14.JPEG",
+        audio: "",
+        level: "easy",
+        options: [
+            { text: "ครั้งแล้ว", img: "" },
+            { text: "ครั้งเล่า", img: "" }
+        ],
+        correct: [0,1]
+    },
+    {
+        question: "คอนโดคณิตหมายเลขห้องอะไร",
+        image: "",
+        audio: "",
+        level: "medium",
+        options: [
+            { text: "508", img: "" },
+            { text: "608", img: "" },
+            { text: "518", img: "" },
+            { text: "618", img: "" }
+        ],
+        correct: [0]
+    },
+    {
+        question: "สลากกินแบ่งรัฐบาลที่ไลออนซื้อมามีหมายเลขอะไรบ้าง",
+        image: "",
+        audio: "",
+        level: "medium",
+        options: [
+            { text: "653008, 654118", img: "" },
+            { text: "654008, 654118", img: "" },
+            { text: "653008, 653118", img: "" },
+            { text: "654008, 653118", img: "" },
+        ],
+        correct: [1]
+    },
+    {
         question: "\"ถ้าคุณเป็นแฟนผมนะ คุณไม่ต้องเหนื่อยอะไรเลย ผมก็รักคุณแบบที่คุณเป็นแบบนี้นี่แหละ\" เป็นคำพูดของโตโต้จาก EP. ใด",
         image: "",
         audio: "",
@@ -168,7 +204,7 @@ const quizDatabase = [
             { text: "EP.4", img: "" },
             { text: "EP.5", img: "" }
         ],
-        correct: [1]
+        correct: [2]
     },
      {
         question: "\"ผมเข้าใจว่าข้างบนท้องฟ้ามันสวย... ท้องฟ้าข้างล่างก็ไม่เลวนะคุณ เห็นเงาพระจันทร์สะท้อนน้ำด้วย\" เป็นคำพูดของโตโต้จาก EP. ใด",
@@ -186,7 +222,7 @@ const quizDatabase = [
     },
     {
         question: "ซีนนี้ EP. ไหน?",
-        image: "assets/images/.png",
+        image: "assets/images/ep-5-medium.JPEG",
         audio: "",
         level: "medium",
         options: [
@@ -194,6 +230,49 @@ const quizDatabase = [
             { text: "EP.2", img: "" },
             { text: "EP.3", img: "" },
             { text: "EP.4", img: "" },
+            { text: "EP.5", img: "" }
+        ],
+        correct: [4]
+    },
+    {
+        question: "ซีนนี้ EP. ไหน?",
+        image: "assets/images/ep-4-medium.JPEG",
+        audio: "",
+        level: "medium",
+        options: [
+            { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
+            { text: "EP.3", img: "" },
+            { text: "EP.4", img: "" },
+            { text: "EP.5", img: "" }
+        ],
+        correct: [3]
+    },
+    {
+        question: "เสียงนี้ EP. ไหน?",
+        image: "",
+        audio: "assets/audio/ep2.mp3",
+        level: "medium",
+        options: [
+            { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
+            { text: "EP.3", img: "" },
+            { text: "EP.4", img: "" },
+            { text: "EP.5", img: "" }
+        ],
+        correct: [1]
+    },
+    {
+        question: "จงต่อประโยคหลังจากนี้ให้ถูกต้อง \"โทษนะ ฮอตมากจ้ะ คนจีบเยอะมาก เดมแตก ...........\"",
+        image: "assets/images/toto-hot.png",
+        audio: "",
+        level: "medium",
+        options: [
+            { text: "โห่ ไม่ใช่ซาซ่าที่เลือกไม่ได้", img: "" },
+            { text: "โห่ เลือกได้จ้า", img: "" },
+            { text: "โห่ กู้ภัยหล่อบอกต่อด้วย", img: "" },
+            { text: "โห่ เก็ทเปล่า", img: "" },
+            { text: "โห่ อยู่เป็นโสดละเสียวกว่า", img: "" }
         ],
         correct: [2]
     },
@@ -213,7 +292,7 @@ const quizDatabase = [
     },
     {
         question: "ซีนนี้ EP. ไหน?",
-        image: "assets/images/.png",
+        image: "assets/images/ep-3-hard.JPEG",
         audio: "",
         level: "hard",
         options: [
@@ -223,7 +302,21 @@ const quizDatabase = [
             { text: "EP.4", img: "" },
             { text: "EP.5", img: "" }
         ],
-        correct: [1]
+        correct: [2]
+    },
+    {
+        question: "ซีนนี้ EP. ไหน?",
+        image: "assets/images/ep-4-hard.JPEG",
+        audio: "",
+        level: "hard",
+        options: [
+            { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
+            { text: "EP.3", img: "" },
+            { text: "EP.4", img: "" },
+            { text: "EP.5", img: "" }
+        ],
+        correct: [3]
     },
     {
         question: "รอยสักใต้อกข้างซ้ายของโตโต้เป็นประโยคจากเพลงใดของ LOSO และเป็นท่อนใดในเนื้อเพลง",
@@ -241,7 +334,21 @@ const quizDatabase = [
 
         ],
         correct: [1]
-    }
+    },
+    {
+        question: "ซีนนี้คณิตใส่เสื้อสีอะไร?",
+        image: "",
+        audio: "",
+        level: "hard",
+        options: [
+            { text: "", img: "assets/images/kanit-pink-choice.png" },
+            { text: "", img: "assets/images/kanit-green-choice.png" },
+            { text: "", img: "assets/images/kanit-normal-choice.JPEG" },
+            { text: "", img: "assets/images/kanit-purple-choice.png" }
+        ],
+        correct: [2]
+    },
+
 
 ];
 
@@ -264,9 +371,9 @@ function generateQuizSet() {
     shuffleArray(mediumPool);
     shuffleArray(hardPool);
 
-    const selectedEasy = easyPool.slice(0, 10);
-    const selectedMedium = mediumPool.slice(0, 6);
-    const selectedHard = hardPool.slice(0, 4);
+    const selectedEasy = easyPool.slice(0, 20);
+    const selectedMedium = mediumPool.slice(0, 20);
+    const selectedHard = hardPool.slice(0, 20);
 
     activeQuizSet = [...selectedEasy, ...selectedMedium, ...selectedHard];
     shuffleArray(activeQuizSet);
