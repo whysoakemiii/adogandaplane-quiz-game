@@ -99,7 +99,7 @@ const quizDatabase = [
             { text: "5 ปี", img: "" },
             { text: "6 ปี", img: "" }
         ],
-        correct: [3]
+        correct: [1]
     },
     {
         question: "ภารกิจตามจับชู้กัปตันไลออน มีชื่อภารกิจว่าอะไร",
@@ -371,9 +371,9 @@ function generateQuizSet() {
     shuffleArray(mediumPool);
     shuffleArray(hardPool);
 
-    const selectedEasy = easyPool.slice(0, 20);
-    const selectedMedium = mediumPool.slice(0, 20);
-    const selectedHard = hardPool.slice(0, 20);
+    const selectedEasy = easyPool.slice(0, 10);
+    const selectedMedium = mediumPool.slice(0, 6);
+    const selectedHard = hardPool.slice(0, 4);
 
     activeQuizSet = [...selectedEasy, ...selectedMedium, ...selectedHard];
     shuffleArray(activeQuizSet);
