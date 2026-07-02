@@ -371,9 +371,9 @@ function generateQuizSet() {
     shuffleArray(mediumPool);
     shuffleArray(hardPool);
 
-    const selectedEasy = easyPool.slice(0, 10);
-    const selectedMedium = mediumPool.slice(0, 6);
-    const selectedHard = hardPool.slice(0, 4);
+    const selectedEasy = easyPool.slice(0, 8);
+    const selectedMedium = mediumPool.slice(0, 5);
+    const selectedHard = hardPool.slice(0, 3);
 
     activeQuizSet = [...selectedEasy, ...selectedMedium, ...selectedHard];
     shuffleArray(activeQuizSet);
