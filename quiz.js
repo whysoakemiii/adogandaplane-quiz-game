@@ -341,10 +341,10 @@ const quizDatabase = [
         audio: "",
         level: "hard",
         options: [
-            { text: "", img: "assets/images/kanit-pink-choice.png" },
-            { text: "", img: "assets/images/kanit-green-choice.png" },
-            { text: "", img: "assets/images/kanit-normal-choice.png" },
-            { text: "", img: "assets/images/kanit-purple-choice.png" }
+            { text: "ชมพู", img: "assets/images/kanit-pink-choice.png" },
+            { text: "เขียว", img: "assets/images/kanit-green-choice.png" },
+            { text: "แดง", img: "assets/images/kanit-normal-choice.png" },
+            { text: "ม่วง", img: "assets/images/kanit-purple-choice.png" }
         ],
         correct: [2]
     },
