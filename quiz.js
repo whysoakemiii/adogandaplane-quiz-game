@@ -129,17 +129,73 @@ const quizDatabase = [
         correct: [2]
     },
     {
+        question: "ซีนนี้ EP. ไหน?",
+        image: "assets/images/ep-1.png",
+        audio: "",
+        level: "easy",
+        options: [
+            { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
+            { text: "EP.3", img: "" },
+            { text: "EP.4", img: "" },
+            { text: "EP.5", img: "" }
+        ],
+        correct: [0]
+    },
+    {
+        question: "ซีนนี้ EP. ไหน?",
+        image: "assets/images/ep-3.png",
+        audio: "",
+        level: "easy",
+        options: [
+            { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
+            { text: "EP.3", img: "" },
+            { text: "EP.4", img: "" },
+            { text: "EP.5", img: "" }
+        ],
+        correct: [2]
+    },
+    {
         question: "\"ถ้าคุณเป็นแฟนผมนะ คุณไม่ต้องเหนื่อยอะไรเลย ผมก็รักคุณแบบที่คุณเป็นแบบนี้นี่แหละ\" เป็นคำพูดของโตโต้จาก EP. ใด",
         image: "",
         audio: "",
         level: "medium",
         options: [
             { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
             { text: "EP.3", img: "" },
             { text: "EP.4", img: "" },
-            { text: "EP.6", img: "" }
+            { text: "EP.5", img: "" }
         ],
         correct: [1]
+    },
+     {
+        question: "\"ผมเข้าใจว่าข้างบนท้องฟ้ามันสวย... ท้องฟ้าข้างล่างก็ไม่เลวนะคุณ เห็นเงาพระจันทร์สะท้อนน้ำด้วย\" เป็นคำพูดของโตโต้จาก EP. ใด",
+        image: "",
+        audio: "",
+        level: "medium",
+        options: [
+            { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
+            { text: "EP.3", img: "" },
+            { text: "EP.4", img: "" },
+            { text: "EP.5", img: "" }
+        ],
+        correct: [4]
+    },
+    {
+        question: "ซีนนี้ EP. ไหน?",
+        image: "assets/images/.png",
+        audio: "",
+        level: "medium",
+        options: [
+            { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
+            { text: "EP.3", img: "" },
+            { text: "EP.4", img: "" },
+        ],
+        correct: [2]
     },
     {
         question: "เมนูใดไม่ได้อยู่ในชุด Limited Love Set",
@@ -150,10 +206,43 @@ const quizDatabase = [
             { text: "ลาบสองใจ", img: "" },
             { text: "ยำหน้าด้านซีฟู๊ด", img: "" },
             { text: "สเต๊กเนื้อคบชู้", img: "" },
-            { text: "ต้มต้นงิ้ว", img: "" }
+            { text: "ต้มต้นงิ้ว", img: "" },
+
         ],
         correct: [2]
+    },
+    {
+        question: "ซีนนี้ EP. ไหน?",
+        image: "assets/images/.png",
+        audio: "",
+        level: "hard",
+        options: [
+            { text: "EP.1", img: "" },
+            { text: "EP.2", img: "" },
+            { text: "EP.3", img: "" },
+            { text: "EP.4", img: "" },
+            { text: "EP.5", img: "" }
+        ],
+        correct: [1]
+    },
+    {
+        question: "รอยสักใต้อกข้างซ้ายของโตโต้เป็นประโยคจากเพลงใดของ LOSO และเป็นท่อนใดในเนื้อเพลง",
+        image: "",
+        audio: "",
+        level: "hard",
+        options: [
+            { text: "\"ขอเพียงแค่ฝันให้ไกล\" - ผู้ชนะ", img: "" },
+            { text: "\"คนแน่แน่ว เท่านั้นผู้ชนะ\" - ผู้ชนะ", img: "" },
+            { text: "\"หนทางที่เดินฉันลิขิตเอง \" - จักรยานสีแดง", img: "" },
+            { text: "\"ฉันกำหนดเองในเส้นทางเดินของใจ\" - จักรยานสีแดง", img: "" },
+            { text: "\"สิ่งที่ฉันทำลงไปใจสั่งมา\" - ใจสั่งมา", img: "" },
+            { text: "\"ก็อยู่ที่ใจของคุณนั้นแหละ\" - ผู้นำอยู่ที่ใจ", img: "" },
+
+
+        ],
+        correct: [1]
     }
+
 ];
 
 let activeQuizSet = []; 
