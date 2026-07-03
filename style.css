@@ -620,8 +620,111 @@ body {
     background-color: #333333;
 }
 
+/* --- 10. Answer Key Screen --- */
+.btn-answer { background-color: #bfe3f1; color: #063a50; }
+
+.answer-screen-wrapper {
+    width: 100%;
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.answer-list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 20px;
+}
+
+.answer-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 3px solid #ffffff;
+    border-radius: 24px;
+    padding: 20px 24px;
+    box-shadow: 0 10px 30px rgba(6, 58, 80, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.answer-q-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.answer-q-num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #063a50;
+    white-space: nowrap;
+    padding-top: 2px;
+}
+
+.answer-q-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #063a50;
+    line-height: 1.5;
+}
+
+.answer-q-img {
+    width: 100%;
+    max-width: 260px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid #ffffff;
+    display: block;
+    margin: 0 auto 14px auto;
+}
+
+.answer-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.answer-opt {
+    padding: 10px 16px;
+    border-radius: 14px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid #e8e8e8;
+    color: #8c8c8c;
+}
+
+.answer-opt-correct {
+    background-color: #d4f5dd;
+    border-color: #39b54a;
+    color: #1a6e2a;
+}
+
+.answer-opt-wrong {
+    background-color: #fde0e3;
+    border-color: #ff929e;
+    color: #b0001e;
+    text-decoration: line-through;
+}
+
+.answer-timeout-note {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ff6b00;
+    background-color: #fff4e0;
+    border: 2px solid #ffc87a;
+    border-radius: 10px;
+    padding: 6px 14px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
 /* ==========================================================================
-   📱 10. RESPONSIVE MOBILE SETTINGS (เวอร์ชันแก้ไขปีกกาซ้อนและพื้นที่สีม่วงล้นขาด)
+   📱 12. RESPONSIVE MOBILE SETTINGS (เวอร์ชันแก้ไขปีกกาซ้อนและพื้นที่สีม่วงล้นขาด)
    ========================================================================== */
 @media (max-width: 480px) {
     body { 
@@ -736,6 +839,29 @@ body {
     }
     
     .footer-credit {
-        font-size: 0.75rem; 
+        font-size: 0.75rem;
+    }
+
+    .answer-screen-wrapper {
+        width: 92%;
+        max-width: 340px;
+    }
+
+    .answer-card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .answer-q-text {
+        font-size: 0.95rem;
+    }
+
+    .answer-q-img {
+        height: 120px;
+    }
+
+    .answer-opt {
+        font-size: 0.88rem;
+        padding: 8px 12px;
     }
 }

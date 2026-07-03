@@ -245,7 +245,8 @@ const quizDatabase = [
 
 ];
 
-let activeQuizSet = []; 
+let activeQuizSet = [];
+let userAnswers = [];
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -449,6 +450,7 @@ function resetAndStartTimer() {
 
         if (msRemaining <= 0) {
             clearInterval(timerInterval);
+            userAnswers.push({ selectedIndex: null, timedOut: true });
             currentQuestionIndex++;
             loadQuestion();
         }
@@ -465,15 +467,18 @@ if (playAudioBtn) {
 }
 
 function checkAnswer(selectedIndex) {
-    clearInterval(timerInterval); 
-    if (questionAudioEl) questionAudioEl.pause();   
-    
+    clearInterval(timerInterval);
+    if (questionAudioEl) questionAudioEl.pause();
+
     const currentQuiz = activeQuizSet[currentQuestionIndex];
-    
-    if (currentQuiz.correct.includes(selectedIndex)) {
+    const isCorrect = currentQuiz.correct.includes(selectedIndex);
+
+    userAnswers.push({ selectedIndex, timedOut: false, isCorrect });
+
+    if (isCorrect) {
         score++;
     }
-    
+
     currentQuestionIndex++;
     loadQuestion();
 }
@@ -520,13 +525,75 @@ function showResult() {
     if (resultFeedbackEl) resultFeedbackEl.innerText = feedbackText;
 }
 
+function showAnswerKey() {
+    const answerScreenEl = document.getElementById('quiz-answer-screen');
+    const answerListEl = document.getElementById('answer-list');
+    if (!answerScreenEl || !answerListEl) return;
+
+    if (resultScreenEl) resultScreenEl.style.display = "none";
+    answerScreenEl.style.display = "block";
+
+    answerListEl.innerHTML = "";
+
+    activeQuizSet.forEach((quiz, i) => {
+        const userAns = userAnswers[i];
+        const card = document.createElement('div');
+        card.classList.add('answer-card');
+
+        const qHeader = document.createElement('div');
+        qHeader.classList.add('answer-q-header');
+
+        const statusIcon = userAns?.timedOut ? "⏱️" : (userAns?.isCorrect ? "✅" : "❌");
+        qHeader.innerHTML = `<span class="answer-q-num">${statusIcon} ข้อ ${i + 1}</span><span class="answer-q-text">${quiz.question}</span>`;
+        card.appendChild(qHeader);
+
+        if (quiz.image && quiz.image !== "" && !quiz.image.endsWith("/.png")) {
+            const img = document.createElement('img');
+            img.src = quiz.image;
+            img.classList.add('answer-q-img');
+            card.appendChild(img);
+        }
+
+        const optList = document.createElement('div');
+        optList.classList.add('answer-options');
+
+        quiz.options.forEach((opt, idx) => {
+            const optEl = document.createElement('div');
+            optEl.classList.add('answer-opt');
+
+            const isCorrect = quiz.correct.includes(idx);
+            const isSelected = userAns?.selectedIndex === idx;
+
+            if (isCorrect) optEl.classList.add('answer-opt-correct');
+            else if (isSelected && !isCorrect) optEl.classList.add('answer-opt-wrong');
+
+            const prefix = isCorrect ? "✔ " : (isSelected && !isCorrect ? "✘ " : "");
+            optEl.textContent = `${prefix}${opt.text}`;
+            optList.appendChild(optEl);
+        });
+
+        if (userAns?.timedOut) {
+            const timeoutNote = document.createElement('div');
+            timeoutNote.classList.add('answer-timeout-note');
+            timeoutNote.textContent = "⏱️ หมดเวลา — ไม่ได้เลือกคำตอบ";
+            card.appendChild(timeoutNote);
+        }
+
+        card.appendChild(optList);
+        answerListEl.appendChild(card);
+    });
+}
+
 function resetQuiz() {
+    const answerScreenEl = document.getElementById('quiz-answer-screen');
+    if (answerScreenEl) answerScreenEl.style.display = "none";
     if (resultScreenEl && startPhase1 && startPhase2 && startScreenEl) {
         resultScreenEl.style.display = "none";
         startPhase1.style.display = "block";
         startPhase2.style.display = "none";
-        startScreenEl.style.display = "block"; 
+        startScreenEl.style.display = "block";
         currentQuestionIndex = 0;
         score = 0;
+        userAnswers = [];
     }
 }
