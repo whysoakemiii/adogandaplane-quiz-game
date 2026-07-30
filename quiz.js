@@ -1,3 +1,236 @@
+﻿// ============================================================
+//  IMAGE QUIZ DATABASE — 45 ข้อ (รูปภาพล้วน)
+//  วิธีเพิ่มรูป: ใส่ไฟล์ไว้ใน assets/images/ แล้วแก้ path
+// ============================================================
+const quizImageDatabase = [
+    {
+        image: "assets/images/episode/1-1.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.3",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/1-2.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/2-1.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.4",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/2-2.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.2",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/3-1.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.3",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/3-2.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.3",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/4-1.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.4",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/4-2.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/5-1.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.3",img:""},{text:"EP.5",img:""},{text:"EP.9",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/5-2.png", audio: "",
+        options: [{text:"EP.3",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/5-3.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/6-1.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/6-2.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.8",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/7-1.png", audio: "",
+        options: [{text:"EP.3",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/7-2.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/8-1.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.5",img:""},{text:"EP.8",img:""},{text:"EP.9",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/8-2.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.8",img:""}],
+        correct: [3]
+    },
+    {
+        image: "assets/images/episode/9-1.png", audio: "",
+        options: [{text:"EP.3",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [3]
+    },
+    {
+        image: "assets/images/episode/9-2.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [3]
+    },
+    {
+        image: "assets/images/episode/1-3.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.3",img:""},{text:"EP.6",img:""},{text:"EP.8",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/1-4.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/1-5.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.3",img:""},{text:"EP.6",img:""},{text:"EP.8",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/2-3.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/2-4.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.2",img:""},{text:"EP.5",img:""},{text:"EP.8",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/2-5.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.4",img:""},{text:"EP.8",img:""},{text:"EP.9",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/3-3.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.3",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/3-4.png", audio: "",
+        options: [{text:"EP.3",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [0]
+    },
+    {
+        image: "assets/images/episode/3-5.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.3",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/4-3.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/4-4.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.8",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/4-5.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.7",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/5-4.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/5-5.png", audio: "",
+        options: [{text:"EP.3",img:""},{text:"EP.5",img:""},{text:"EP.8",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/6-3.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.8",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/6-4.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.3",img:""},{text:"EP.6",img:""},{text:"EP.9",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/6-5.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.6",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [1]
+    },
+    {
+        image: "assets/images/episode/7-3.png", audio: "",
+        options: [{text:"EP.3",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.8",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/7-4.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.7",img:""},{text:"EP.8",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/7-5.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/8-3.png", audio: "",
+        options: [{text:"EP.4",img:""},{text:"EP.6",img:""},{text:"EP.8",img:""},{text:"EP.9",img:""}],
+        correct: [2]
+    },
+    {
+        image: "assets/images/episode/8-4.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.8",img:""}],
+        correct: [3]
+    },
+    {
+        image: "assets/images/episode/8-5.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.3",img:""},{text:"EP.6",img:""},{text:"EP.8",img:""}],
+        correct: [3]
+    },
+    {
+        image: "assets/images/episode/9-3.png", audio: "",
+        options: [{text:"EP.3",img:""},{text:"EP.6",img:""},{text:"EP.8",img:""},{text:"EP.9",img:""}],
+        correct: [3]
+    },
+    {
+        image: "assets/images/episode/9-4.png", audio: "",
+        options: [{text:"EP.2",img:""},{text:"EP.5",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [3]
+    },
+    {
+        image: "assets/images/episode/9-5.png", audio: "",
+        options: [{text:"EP.1",img:""},{text:"EP.4",img:""},{text:"EP.7",img:""},{text:"EP.9",img:""}],
+        correct: [3]
+    },
+
+];
+
 const quizDatabase = [
     {
         question: "ข้อใดคือชื่อจริงของโตโต้ที่ถูกต้อง",
@@ -354,6 +587,78 @@ const quizDatabase = [
 
 let activeQuizSet = [];
 let userAnswers = [];
+let currentMode = "image";
+let imageScore = 0;         // สะสม timeRemaining ของข้อที่ตอบถูก (image mode)
+let currentLang = 'th';
+
+const i18n = {
+    th: {
+        welcomeText: "ก่อนเครื่องลงจอดเป็นครั้งสุดท้าย ✈️",
+        gameDescTop: "🐶ทบทวนก่อนจาก — คุณจำทุกซีนได้ดีแค่ไหน?",
+        clickToPlay: "กดปุ่มเพื่อเริ่มเล่นเกม",
+        menuSubtitle: "นี่คือเที่ยวบินสุดท้าย — พร้อมทบทวนความทรงจำทุกซีนก่อนจากกันแล้วหรือยัง?",
+        rulesGameDesc: "🎮 ทายว่าแต่ละฉากในรูปมาจาก EP. ไหนของซีรีส์",
+        rulesQ: "🖼️ จำนวนคำถามทั้งหมด <b>15 ข้อ</b> (สุ่มจาก 45 ข้อ)",
+        rulesTime: "⏱️ จำกัดเวลาข้อละ <b>1 นาที (60 วินาที)</b>",
+        rulesScore: "⭐ คะแนนเต็ม <b>100 คะแนน</b> — ยิ่งตอบเร็ว ยิ่งได้คะแนนมาก",
+        rulesTimeout: "❌ หากหมดเวลา ไม่ได้คะแนนข้อนั้น",
+        startBtn: "เริ่มทำแบบทดสอบ",
+        audioBtn: "🔊กดเพื่อฟังเสียง ☁️",
+        timerPre: "เหลือ ",
+        timerPost: " วิ",
+        scoreUnit: " คะแนน",
+        questionOf: (cur, total) => `ข้อที่ ${cur}/${total}`,
+        resultTitle: "รายงานสถานะผู้โดยสาร ✈️📡",
+        resultSubtitle: "สรุปภารกิจความทรงจำและความแม่นยำบนเที่ยวบินนี้",
+        showAnswerBtn: "ดูเฉลยทุกข้อ 📋",
+        retryBtn: "ทำแบบทดสอบอีกครั้ง 🔄",
+        answerTitle: "เฉลยข้อสอบ 📋",
+        answerSubtitle: "ตรวจสอบคำตอบที่ถูกต้องของแต่ละข้อ",
+        backToResult: "← กลับผลลัพธ์",
+        timeoutNote: "⏱️ หมดเวลา — ไม่ได้เลือกคำตอบ",
+        questionPrefix: (i) => `ข้อ ${i + 1}`,
+        imageRanks: [
+            { max: 25,  title: (s) => `🙈 ตาถึงแต่ใจไม่ถึง (${s} คะแนน)`, text: "มองแล้วแต่ไม่เห็น เห็นแล้วแต่ไม่จำ 😵‍💫 ความช่างสังเกตยังเบาบางมาก ลองกลับไปดู EP. อีกรอบแล้วฝึกสังเกตรายละเอียดเล็กๆ น้อยๆ ดูนะ 👀", color: "#ff929e" },
+            { max: 50,  title: (s) => `🔎 นักสังเกตการณ์มือใหม่ (${s} คะแนน)`, text: "เห็นภาพรวมได้บ้าง แต่รายละเอียดยังหลุดไปบางส่วน 🌀 เหมือนมองผ่านแว่นที่ยังไม่ได้ตัดค่าสายตา ฝึกสังเกตบ่อยๆ แล้วความจำจะคมขึ้นเอง 💪", color: "#fbd5c6" },
+            { max: 70,  title: (s) => `👁️ คนช่างสังเกตระดับกลาง (${s} คะแนน)`, text: "ตาไวพอตัว จับรายละเอียดได้ค่อนข้างดี 🎯 แต่บางซีนยังหลุดออกไป อาจเพราะตอบเร็วเกินไปหรือซีนนั้นดูไม่ค่อยได้ เกือบแล้ว!", color: "#3182e6" },
+            { max: 90,  title: (s) => `🦅 นักสังเกตการณ์ระดับเชี่ยวชาญ (${s} คะแนน)`, text: "ตาแหลม สังเกตเก่งมาก จับทุกรายละเอียดได้แม่นและเร็ว ⚡ เหมือนมีตาที่สามช่วยดู ระดับนี้ถือว่าอยู่ในชั้นแนวหน้าของการสังเกตมนุษย์เลยนะ 🧠✨", color: "#9b59b6" },
+            { max: 101, title: (s) => `🏆 ตาทิพย์ — ไม่มีอะไรหลุดสายตา (${s} คะแนน)`, text: "คุณไม่ใช่แค่ดูซีรีส์ คุณคือคนที่บันทึกทุกอณูของมันไว้ในความจำ 🧠🔍 ไม่มีซีนไหนหลุดสายตา ไม่มีรายละเอียดไหนตกหล่น นี่คือระดับตำนานแห่งการสังเกต!", color: "#f1c40f" }
+        ]
+    },
+    en: {
+        welcomeText: "Before the final landing ✈️",
+        gameDescTop: "🐶 How well do you remember every scene?",
+        clickToPlay: "Press the button to start",
+        menuSubtitle: "This is the last flight — ready to recall every scene before we say goodbye?",
+        rulesGameDesc: "🎮 Guess which episode each scene is from",
+        rulesQ: "🖼️ Total: <b>15 questions</b> (randomly picked from 45)",
+        rulesTime: "⏱️ Time limit: <b>1 minute (60 sec)</b> per question",
+        rulesScore: "⭐ Max score: <b>100 points</b> — the faster you answer, the more you earn",
+        rulesTimeout: "❌ Time out = no points for that question",
+        startBtn: "Start Quiz",
+        audioBtn: "🔊 Tap to listen ☁️",
+        timerPre: "",
+        timerPost: "s left",
+        scoreUnit: " pts",
+        questionOf: (cur, total) => `Q. ${cur}/${total}`,
+        resultTitle: "Passenger Status Report ✈️📡",
+        resultSubtitle: "Mission summary: memory & accuracy on this flight",
+        showAnswerBtn: "See All Answers 📋",
+        retryBtn: "Try Again 🔄",
+        answerTitle: "Answer Key 📋",
+        answerSubtitle: "Check the correct answer for each question",
+        backToResult: "← Back to Results",
+        timeoutNote: "⏱️ Time's up — no answer selected",
+        questionPrefix: (i) => `Q. ${i + 1}`,
+        imageRanks: [
+            { max: 25,  title: (s) => `🙈 Eyes Wide Open, Brain Elsewhere (${s} pts)`, text: "Looking but not seeing, seeing but not remembering 😵‍💫 Your eye for detail needs training. Try rewatching the episodes! 👀", color: "#ff929e" },
+            { max: 50,  title: (s) => `🔎 Rookie Scene Detective (${s} pts)`, text: "You catch the big picture, but details slip through 🌀 Like watching through foggy glasses. Keep practicing — your memory will sharpen! 💪", color: "#fbd5c6" },
+            { max: 70,  title: (s) => `👁️ Mid-Level Scene Observer (${s} pts)`, text: "Pretty sharp eyes! You catch most details 🎯 But a few scenes still slipped by — maybe you answered too fast. Almost there!", color: "#3182e6" },
+            { max: 90,  title: (s) => `🦅 Expert Scene Analyst (${s} pts)`, text: "Sharp-eyed and quick! You catch every detail accurately ⚡ Like having a third eye. You're in the top tier of scene observers! 🧠✨", color: "#9b59b6" },
+            { max: 101, title: (s) => `🏆 All-Seeing Eye — Nothing Gets Past You (${s} pts)`, text: "You didn't just watch the series — you memorized every single frame 🧠🔍 No scene slipped by, no detail was missed. This is legendary-level observation!", color: "#f1c40f" }
+        ]
+    }
+};
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -364,6 +669,13 @@ function shuffleArray(array) {
 }
 
 function generateQuizSet() {
+    if (currentMode === "image") {
+        const pool = [...quizImageDatabase];
+        shuffleArray(pool);
+        activeQuizSet = pool.slice(0, 15);
+        return;
+    }
+
     const easyPool = quizDatabase.filter(q => q.level === "easy");
     const mediumPool = quizDatabase.filter(q => q.level === "medium");
     const hardPool = quizDatabase.filter(q => q.level === "hard");
@@ -380,8 +692,8 @@ function generateQuizSet() {
     shuffleArray(activeQuizSet);
 }
 
-const TIME_LIMIT = 60; 
-let timeRemaining = TIME_LIMIT;
+const TIME_LIMIT = 60;
+let timeRemaining = TIME_LIMIT; // อัปเดตตลอดโดย resetAndStartTimer
 let timerInterval = null;
 let currentQuestionIndex = 0;
 let score = 0;
@@ -408,67 +720,71 @@ const startPhase2 = document.getElementById('start-phase-2');
 
 const bigPlayBtn = document.getElementById('big-play-btn');
 const actualStartBtn = document.getElementById('actual-start-btn');
-const captchaModal = document.getElementById('captcha-modal');
-const captchaInput = document.getElementById('captcha-input');
-const captchaVerifyBtn = document.getElementById('captcha-verify-btn');
 
 const finalScoreEl = document.getElementById('final-score');
 const totalQuestionsEl = document.getElementById('total-questions');
 const resultBadgeEl = document.getElementById('result-badge');
 const resultFeedbackEl = document.getElementById('result-feedback');
 
-
 if (bigPlayBtn) {
     bigPlayBtn.addEventListener('click', () => {
         if (startPhase1 && startPhase2) {
             startPhase1.style.display = "none";
-            startPhase2.style.display = "block"; 
+            startPhase2.style.display = "block";
         }
     });
 }
 
 if (actualStartBtn) {
     actualStartBtn.addEventListener("click", () => {
-        if (captchaModal && captchaInput) {
-            captchaModal.style.setProperty('display', 'flex', 'important');
-            captchaModal.style.display = "flex"; 
-            captchaInput.value = ""; 
-            captchaInput.focus();
+        if (startScreenEl && activeScreenEl) {
+            startScreenEl.style.display = "none";
+            activeScreenEl.style.display = "block";
+            generateQuizSet();
+            loadQuestion();
         }
     });
 }
 
-if (captchaVerifyBtn) {
-    captchaVerifyBtn.addEventListener("click", () => {
-        const userInput = captchaInput.value.trim();
-        
-        if (userInput === "เตนิวเป็นแฟนกัน") {
-            if (captchaModal && startScreenEl && activeScreenEl) {
-                captchaModal.style.display = "none";
-                startScreenEl.style.display = "none";
-                activeScreenEl.style.display = "block";
-                
-                generateQuizSet();
-                loadQuestion();
-            }
-        } else {
-            alert("❌คำตอบของคุณยังไม่ถูกต้อง กรุณาท่องมะยังภันเตนิว 3 จบก่อนพิมพ์คำตอบอีกครั้ง☁️");
-            if (captchaInput) {
-                captchaInput.value = "";
-                captchaInput.focus();
-            }
-        }
-    });
+
+function setLanguage(lang) {
+    currentLang = lang;
+    const btnTh = document.getElementById('lang-btn-th');
+    const btnEn = document.getElementById('lang-btn-en');
+    if (btnTh) btnTh.classList.toggle('active', lang === 'th');
+    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+    applyLanguage();
 }
 
-if (captchaInput) {
-    captchaInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter" && captchaVerifyBtn) {
-            captchaVerifyBtn.click();
-        }
-    });
+function applyLanguage() {
+    const L = i18n[currentLang];
+    const set = (id, val, html = false) => {
+        const el = document.getElementById(id);
+        if (el) html ? (el.innerHTML = val) : (el.innerText = val);
+    };
+    set('welcome-text', L.welcomeText);
+    set('game-desc-top', L.gameDescTop);
+    set('click-to-play', L.clickToPlay);
+    set('phase2-subtitle', L.menuSubtitle);
+    set('rules-game-desc', L.rulesGameDesc);
+    set('rules-q', L.rulesQ, true);
+    set('rules-time', L.rulesTime, true);
+    set('rules-score', L.rulesScore, true);
+    set('rules-timeout', L.rulesTimeout);
+    if (actualStartBtn) actualStartBtn.innerText = L.startBtn;
+    if (playAudioBtn) playAudioBtn.innerText = L.audioBtn;
+    set('timer-pre', L.timerPre);
+    set('timer-post', L.timerPost);
+    set('score-unit', L.scoreUnit);
+    set('result-title', L.resultTitle);
+    set('result-subtitle', L.resultSubtitle);
+    set('show-answer-btn', L.showAnswerBtn);
+    set('retry-btn', L.retryBtn);
+    set('answer-title', L.answerTitle);
+    set('answer-subtitle', L.answerSubtitle);
+    set('back-to-result-btn', L.backToResult);
+    set('answer-retry-btn', L.retryBtn);
 }
-
 
 // --- ฟังก์ชันโหลดโจทย์คำถาม ---
 function loadQuestion() {
@@ -482,8 +798,15 @@ function loadQuestion() {
     }
 
     const currentQuiz = activeQuizSet[currentQuestionIndex];
-    if (questionNumberEl) questionNumberEl.innerText = `ข้อที่ ${currentQuestionIndex + 1}/${activeQuizSet.length}`;
-    if (questionTextEl) questionTextEl.innerText = currentQuiz.question;
+    if (questionNumberEl) questionNumberEl.innerText = i18n[currentLang].questionOf(currentQuestionIndex + 1, activeQuizSet.length);
+    if (questionTextEl) {
+        if (currentQuiz.question) {
+            questionTextEl.innerText = currentQuiz.question;
+            questionTextEl.style.display = 'block';
+        } else {
+            questionTextEl.style.display = 'none';
+        }
+    }
 
     const progressPercent = (currentQuestionIndex / activeQuizSet.length) * 100;
     if (questionProgressEl) questionProgressEl.style.width = `${progressPercent}%`;
@@ -525,16 +848,42 @@ function loadQuestion() {
         textSpan.innerText = option.text;
         button.appendChild(textSpan);
 
+        button.addEventListener('mousedown', function(e) {
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 560);
+        });
+
         button.addEventListener('click', () => checkAnswer(index));
         optionsContainerEl.appendChild(button);
     });
+
+    const quizCardEl = document.querySelector('.quiz-card');
+    if (quizCardEl) {
+        quizCardEl.classList.remove('card-enter');
+        void quizCardEl.offsetWidth;
+        quizCardEl.classList.add('card-enter');
+    }
+    optionsContainerEl.classList.remove('opts-enter');
+    void optionsContainerEl.offsetWidth;
+    optionsContainerEl.classList.add('opts-enter');
 }
 
 function resetAndStartTimer() {
-    clearInterval(timerInterval); 
+    clearInterval(timerInterval);
+    timeRemaining = TIME_LIMIT;
 
     const totalMs = TIME_LIMIT * 1000;
     let msRemaining = totalMs;
+
+    const timerBadgeEl = document.querySelector('.timer-badge');
+    if (timerBadgeEl) timerBadgeEl.classList.remove('timer-warning');
 
     if (timerTextEl) timerTextEl.innerText = TIME_LIMIT;
     if (timeProgressEl) timeProgressEl.style.width = "100%";
@@ -544,9 +893,18 @@ function resetAndStartTimer() {
 
     timerInterval = setInterval(() => {
         msRemaining -= tickRate;
+        timeRemaining = Math.max(0, Math.ceil(msRemaining / 1000));
 
         const secondsToShow = Math.ceil(msRemaining / 1000);
         if (timerTextEl) timerTextEl.innerText = secondsToShow >= 0 ? secondsToShow : 0;
+
+        if (timerBadgeEl) {
+            if (msRemaining <= 10000 && msRemaining > 0) {
+                timerBadgeEl.classList.add('timer-warning');
+            } else {
+                timerBadgeEl.classList.remove('timer-warning');
+            }
+        }
 
         const timePercent = (msRemaining / totalMs) * 100;
 
@@ -558,8 +916,11 @@ function resetAndStartTimer() {
         if (msRemaining <= 0) {
             clearInterval(timerInterval);
             userAnswers.push({ selectedIndex: null, timedOut: true });
-            currentQuestionIndex++;
-            loadQuestion();
+            showAnswerFeedback(-1);
+            setTimeout(() => {
+                currentQuestionIndex++;
+                loadQuestion();
+            }, 1200);
         }
     }, tickRate);
 }
@@ -577,57 +938,128 @@ function checkAnswer(selectedIndex) {
     clearInterval(timerInterval);
     if (questionAudioEl) questionAudioEl.pause();
 
+    const timeAtAnswer = timeRemaining;
     const currentQuiz = activeQuizSet[currentQuestionIndex];
     const isCorrect = currentQuiz.correct.includes(selectedIndex);
 
     userAnswers.push({ selectedIndex, timedOut: false, isCorrect });
 
     if (isCorrect) {
-        score++;
+        if (currentMode === "image") {
+            imageScore += timeAtAnswer;
+            updateScoreDisplay();
+            showScorePopup(timeAtAnswer);
+        } else {
+            score++;
+        }
     }
 
-    currentQuestionIndex++;
-    loadQuestion();
+    showAnswerFeedback(selectedIndex);
+    setTimeout(() => {
+        currentQuestionIndex++;
+        loadQuestion();
+    }, 1200);
+}
+
+function showScorePopup(timeAtAnswer) {
+    const maxPossible = activeQuizSet.length * TIME_LIMIT;
+    const pointsEarned = Math.round((timeAtAnswer / maxPossible) * 100);
+
+    const timerBadge = document.querySelector('.timer-badge');
+    const rect = timerBadge ? timerBadge.getBoundingClientRect() : null;
+
+    const popup = document.createElement('div');
+    popup.classList.add('score-popup');
+    popup.textContent = pointsEarned > 0 ? `+${pointsEarned} ⭐` : `+0`;
+
+    if (rect) {
+        popup.style.left = `${rect.left + rect.width / 2}px`;
+        popup.style.top = `${rect.top}px`;
+    } else {
+        popup.style.left = '50%';
+        popup.style.top = '60px';
+    }
+
+    document.body.appendChild(popup);
+    setTimeout(() => popup.remove(), 1400);
+}
+
+function showAnswerFeedback(selectedIndex) {
+    const currentQuiz = activeQuizSet[currentQuestionIndex];
+    const buttons = optionsContainerEl.querySelectorAll('.quiz-opt-btn-grid');
+    buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (currentQuiz.correct.includes(idx)) {
+            btn.classList.add('opt-correct');
+        } else if (idx === selectedIndex) {
+            btn.classList.add('opt-wrong');
+        }
+    });
+}
+
+function updateScoreDisplay() {
+    const el = document.getElementById('current-score-display');
+    if (!el) return;
+    const maxPossible = activeQuizSet.length * TIME_LIMIT;
+    el.innerText = Math.round((imageScore / maxPossible) * 100);
 }
 
 function showResult() {
     if (activeScreenEl) activeScreenEl.style.display = "none";
     if (resultScreenEl) resultScreenEl.style.display = "block";
 
-    if (finalScoreEl) finalScoreEl.innerText = score;
-    if (totalQuestionsEl) totalQuestionsEl.innerText = activeQuizSet.length;
-    
-    const scorePercentage = (score / activeQuizSet.length) * 100;
-
+    let scorePercentage;
     let rankTitle = "";
     let feedbackText = "";
-    let badgeColor = "#39b54a"; 
+    let badgeColor = "#39b54a";
 
-    if (scorePercentage <= 25) {
-        rankTitle = `🪂ผู้โดยสารงงว่าขึ้นเครื่องตอนไหน (${Math.round(scorePercentage)}%)`;
-        feedbackText = "คุณเหมือนเพิ่งรู้ตัวกลางอากาศว่า ‘นี่มันเกมอะไรเนี่ย?’ 🤯🧠 ความทรงจำหลุดออกจากเครื่องตั้งแต่ตอนประตูยังไม่ปิด 🚪✈️ ตอนนี้ทีมกู้ภัยกำลังพยายามตามหาความทรงจำของคุณอยู่ แนะนำให้กลับไปเช็กอินใหม่อีกรอบ 🎫";
-        badgeColor = "#ff929e";
-    } else if (scorePercentage <= 60) {
-        rankTitle = `🧳ผู้โดยสารกระเป๋าหายระหว่างทาง(${Math.round(scorePercentage)}%)`;
-        feedbackText = "จำได้บ้าง ลืมบ้าง 🧠💨 เหมือนฝากกระเป๋าไว้กับสายการบินแล้วระบบงง ๆ 📦❓ หายไปครึ่งหนึ่ง ตอนนี้หน่วยกู้ภัยพบเบาะแสความจำของคุณบางส่วนแล้ว 🔎 แต่ยังต้องค้นหาเพิ่มอีกนิด";
-        badgeColor = "#fbd5c6";
-    } else if (scorePercentage <= 80) {
-        rankTitle = `✈️ผู้โดยสารชั้นประหยัดสายเนียน (${Math.round(scorePercentage)}%)`;
-        feedbackText = "ความจำดีระดับหนึ่ง 🧠✔️ เหมือนมีทีมกู้ภัยคอยชี้เป้าอยู่ข้าง ๆ เลยรอดมาได้สวย 😆 แม้บางฉากจะเบลอเหมือนหมอกบนรันเวย์ 🌫️🛬 แต่ภารกิจช่วยเหลือถือว่าใกล้สำเร็จแล้ว";
-        badgeColor = "#3182e6";
-    } else if (scorePercentage <= 90) {
-        rankTitle = `🧭ผู้โดยสารกึ่งกัปตันสายลับ(${Math.round(scorePercentage)}%)`;
-        feedbackText = "คุณจำทุกดีเทลได้แบบน่าสงสัยมาก 🧠🔍 จนทีมกู้ภัย เริ่มไม่แน่ใจว่าใครกำลังช่วยใครกันแน่ 😆 เหมือนคุณเป็นทั้งผู้รอดชีวิตและผู้บัญชาการภารกิจในเวลาเดียวกัน 📡✈️";
-        badgeColor = "#9b59b6";
+    if (currentMode === "image") {
+        // คะแนนเต็ม = จำนวนข้อ x TIME_LIMIT normalize เป็น 100
+        const maxPossible = activeQuizSet.length * TIME_LIMIT;
+        const displayScore = Math.round((imageScore / maxPossible) * 100);
+        scorePercentage = displayScore;
+
+        if (finalScoreEl) finalScoreEl.innerText = displayScore;
+        if (totalQuestionsEl) totalQuestionsEl.innerText = 100;
+
+        const rankData = i18n[currentLang].imageRanks.find(r => scorePercentage <= r.max);
+        rankTitle = rankData.title(displayScore);
+        feedbackText = rankData.text;
+        badgeColor = rankData.color;
     } else {
-        rankTitle = `🚨🏆 ตำนานผู้รอดชีวิตระดับ HQ กู้ภัย (${Math.round(scorePercentage)}%)`;
-        feedbackText = "คุณไม่ได้แค่ดู…คุณเหมือนเป็นทั้งผู้รอดชีวิตและศูนย์บัญชาการกู้ภัยเองด้วย จำได้ครบทุกดีเทลตั้งแต่ต้นจนจบ 🧠🎬 จนทีมกู้ภัยต้องขออัดเทปคุณไปเป็นคู่มือภารกิจต่อไป 🎥✈️";
-        badgeColor = "#f1c40f";
+        if (finalScoreEl) finalScoreEl.innerText = score;
+        if (totalQuestionsEl) totalQuestionsEl.innerText = activeQuizSet.length;
+        scorePercentage = (score / activeQuizSet.length) * 100;
+
+        if (scorePercentage <= 25) {
+            rankTitle = `🪂ผู้โดยสารงงว่าขึ้นเครื่องตอนไหน (${Math.round(scorePercentage)}%)`;
+            feedbackText = "คุณเหมือนเพิ่งรู้ตัวกลางอากาศว่า ‘นี่มันเกมอะไรเนี่ย?’ 🤯🧠 ความทรงจำหลุดออกจากเครื่องตั้งแต่ตอนประตูยังไม่ปิด 🚪✈️ ตอนนี้ทีมกู้ภัยกำลังพยายามตามหาความทรงจำของคุณอยู่ แนะนำให้กลับไปเช็กอินใหม่อีกรอบ 🎫";
+            badgeColor = "#ff929e";
+        } else if (scorePercentage <= 60) {
+            rankTitle = `🧳ผู้โดยสารกระเป๋าหายระหว่างทาง(${Math.round(scorePercentage)}%)`;
+            feedbackText = "จำได้บ้าง ลืมบ้าง 🧠💨 เหมือนฝากกระเป๋าไว้กับสายการบินแล้วระบบงง ๆ 📦❓ หายไปครึ่งหนึ่ง ตอนนี้หน่วยกู้ภัยพบเบาะแสความจำของคุณบางส่วนแล้ว 🔎 แต่ยังต้องค้นหาเพิ่มอีกนิด";
+            badgeColor = "#fbd5c6";
+        } else if (scorePercentage <= 80) {
+            rankTitle = `✈️ผู้โดยสารชั้นประหยัดสายเนียน (${Math.round(scorePercentage)}%)`;
+            feedbackText = "ความจำดีระดับหนึ่ง 🧠✔️ เหมือนมีทีมกู้ภัยคอยชี้เป้าอยู่ข้าง ๆ เลยรอดมาได้สวย 😆 แม้บางฉากจะเบลอเหมือนหมอกบนรันเวย์ 🌫️🛬 แต่ภารกิจช่วยเหลือถือว่าใกล้สำเร็จแล้ว";
+            badgeColor = "#3182e6";
+        } else if (scorePercentage <= 90) {
+            rankTitle = `🧭ผู้โดยสารกึ่งกัปตันสายลับ(${Math.round(scorePercentage)}%)`;
+            feedbackText = "คุณจำทุกดีเทลได้แบบน่าสงสัยมาก 🧠🔍 จนทีมกู้ภัย เริ่มไม่แน่ใจว่าใครกำลังช่วยใครกันแน่ 😆 เหมือนคุณเป็นทั้งผู้รอดชีวิตและผู้บัญชาการภารกิจในเวลาเดียวกัน 📡✈️";
+            badgeColor = "#9b59b6";
+        } else {
+            rankTitle = `🚨🏆 ตำนานผู้รอดชีวิตระดับ HQ กู้ภัย (${Math.round(scorePercentage)}%)`;
+            feedbackText = "คุณไม่ได้แค่ดู…คุณเหมือนเป็นทั้งผู้รอดชีวิตและศูนย์บัญชาการกู้ภัยเองด้วย จำได้ครบทุกดีเทลตั้งแต่ต้นจนจบ 🧠🎬 จนทีมกู้ภัยต้องขออัดเทปคุณไปเป็นคู่มือภารกิจต่อไป 🎥✈️";
+            badgeColor = "#f1c40f";
+        }
     }
 
     if (resultBadgeEl) {
         resultBadgeEl.innerText = rankTitle;
         resultBadgeEl.style.backgroundColor = badgeColor;
+        resultBadgeEl.classList.remove('badge-enter');
+        void resultBadgeEl.offsetWidth;
+        resultBadgeEl.classList.add('badge-enter');
     }
     if (resultFeedbackEl) resultFeedbackEl.innerText = feedbackText;
 }
@@ -651,7 +1083,7 @@ function showAnswerKey() {
         qHeader.classList.add('answer-q-header');
 
         const statusIcon = userAns?.timedOut ? "⏱️" : (userAns?.isCorrect ? "✅" : "❌");
-        qHeader.innerHTML = `<span class="answer-q-num">${statusIcon} ข้อ ${i + 1}</span><span class="answer-q-text">${quiz.question}</span>`;
+        qHeader.innerHTML = `<span class="answer-q-num">${statusIcon} ${i18n[currentLang].questionPrefix(i)}</span><span class="answer-q-text">${quiz.question}</span>`;
         card.appendChild(qHeader);
 
         if (quiz.image && quiz.image !== "" && !quiz.image.endsWith("/.png")) {
@@ -682,7 +1114,7 @@ function showAnswerKey() {
         if (userAns?.timedOut) {
             const timeoutNote = document.createElement('div');
             timeoutNote.classList.add('answer-timeout-note');
-            timeoutNote.textContent = "⏱️ หมดเวลา — ไม่ได้เลือกคำตอบ";
+            timeoutNote.textContent = i18n[currentLang].timeoutNote;
             card.appendChild(timeoutNote);
         }
 
@@ -694,13 +1126,15 @@ function showAnswerKey() {
 function resetQuiz() {
     const answerScreenEl = document.getElementById('quiz-answer-screen');
     if (answerScreenEl) answerScreenEl.style.display = "none";
-    if (resultScreenEl && startPhase1 && startPhase2 && startScreenEl) {
-        resultScreenEl.style.display = "none";
-        startPhase1.style.display = "block";
-        startPhase2.style.display = "none";
-        startScreenEl.style.display = "block";
-        currentQuestionIndex = 0;
-        score = 0;
-        userAnswers = [];
-    }
+    if (resultScreenEl) resultScreenEl.style.display = "none";
+    if (startScreenEl) startScreenEl.style.display = "block";
+    if (startPhase1) startPhase1.style.display = "block";
+    if (startPhase2) startPhase2.style.display = "none";
+
+    currentQuestionIndex = 0;
+    score = 0;
+    imageScore = 0;
+    userAnswers = [];
+    const scoreDisplayEl = document.getElementById('current-score-display');
+    if (scoreDisplayEl) scoreDisplayEl.innerText = '0';
 }
