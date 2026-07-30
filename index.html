@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Dog And A Plane - Quiz Game</title>
+    <title>Last Boarding : หมาเห่าครั้งสุดท้าย</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&family=Prompt:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="quiz.js" defer></script>
 </head>
 
 <body>
+
+    <div class="lang-toggle">
+        <button class="lang-btn active" id="lang-btn-th" onclick="setLanguage('th')">TH</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" id="lang-btn-en" onclick="setLanguage('en')">EN</button>
+    </div>
 
     <canvas id="particle-canvas"></canvas>
     <div class="mini-cloud cloud-1"></div>
@@ -22,28 +28,30 @@
             <div class="mini-cloud cloud-start-left"></div>
             <div class="mini-cloud cloud-start-right"></div>
             <div id="start-phase-1">
-                <h3 class="welcome-text">ยินดีต้อนรับสู่เที่ยวบิน ✈️</h3>
-                <h1 class="main-game-title">หมาเห่าเครื่องบิน Quiz Time! 🚨</h1>
-                <p class="game-description-top">พร้อมจะออกเดินทางไปทุกฉากที่คุณจำได้หรือยัง?</p>
-                <p class="game-subtitle-tag">- A Dog And A Plane Quiz Challenge -</p>
+                <h3 id="welcome-text" class="welcome-text">ก่อนเครื่องลงจอดเป็นครั้งสุดท้าย ✈️</h3>
+                <h1 class="main-game-title">Last Boarding : หมาเห่าครั้งสุดท้าย</h1>
+                <p id="game-desc-top" class="game-description-top">🐶ทบทวนก่อนจาก — คุณจำทุกซีนได้ดีแค่ไหน?</p>
+                <p class="game-subtitle-tag">— A Dog And A Plane —</p>
 
                 <button id="big-play-btn" class="big-play-button">
                     <span class="play-triangle"></span>
                 </button>
 
-                <p class="click-to-play-text">กดปุ่มเพื่อเริ่มเล่นเกม</p>
+                <p id="click-to-play" class="click-to-play-text">กดปุ่มเพื่อเริ่มเล่นเกม</p>
             </div>
             <div id="start-phase-2" style="display: none;">
-                <h2 class="menu-title">⚡ ท่านผู้โดยสารโปรดทราบ! ⚡</h2>
-                <p class="menu-subtitle" style="margin-bottom: 20px;">
-                    เตรียมสติและความจำของท่านให้พร้อมและคาดเข็มขัดนิรภัยตลอดเวลาเพื่อความปลอดภัย</p>
+                <h2 class="menu-title">✈️ Last Call for Boarding</h2>
+                <p id="phase2-subtitle" class="menu-subtitle" style="margin-bottom: 20px;">
+                    นี่คือเที่ยวบินสุดท้าย — พร้อมทบทวนความทรงจำทุกซีนก่อนจากกันแล้วหรือยัง?</p>
                 <div class="rules-box">
-                    <p>📝 จำนวนคำถามทั้งหมด <b>16 ข้อ</b></p>
-                    <p>⏱️ จำกัดเวลาข้อละ <b>1 นาที (60 วินาที)</b></p>
-                    <p>❌ หากหมดเวลา ระบบจะนับว่าผิดและข้ามข้อทันที</p>
+                    <p id="rules-game-desc">🎮 ทายว่าแต่ละฉากในรูปมาจาก EP. ไหนของซีรีส์</p>
+                    <p id="rules-q">🖼️ จำนวนคำถามทั้งหมด <b>15 ข้อ</b> (สุ่มจาก 45 ข้อ)</p>
+                    <p id="rules-time">⏱️ จำกัดเวลาข้อละ <b>1 นาที (60 วินาที)</b></p>
+                    <p id="rules-score">⭐ คะแนนเต็ม <b>100 คะแนน</b> — ยิ่งตอบเร็ว ยิ่งได้คะแนนมาก</p>
+                    <p id="rules-timeout">❌ หากหมดเวลา ไม่ได้คะแนนข้อนั้น</p>
                 </div>
                 <button id="actual-start-btn" class="menu-btn btn-quiz"
-                    style="width: 100%; cursor: pointer;" onclick="openCaptcha()">เริ่มทำแบบทดสอบ</button>
+                    style="width: 100%; cursor: pointer;">เริ่มทำแบบทดสอบ</button>
             </div>
         </div>
 
@@ -51,10 +59,13 @@
             <div class="quiz-status-bar">
                 <div class="status-top-row">
                     <div class="status-badge question-badge">
-                        📌 <span id="question-number">ข้อที่ 1/20</span>
+                        📌 <span id="question-number">ข้อที่ 1/15</span>
+                    </div>
+                    <div class="status-badge score-badge">
+                        ⭐ <span id="current-score-display">0</span><span id="score-unit"> คะแนน</span>
                     </div>
                     <div class="status-badge timer-badge">
-                        ⏱️ เหลือ <span id="timer-text">60</span> วิ
+                        ⏱️ <span id="timer-pre">เหลือ </span><span id="timer-text">60</span><span id="timer-post"> วิ</span>
                     </div>
                 </div>
                 <div class="progress-track progress-blue">
@@ -78,8 +89,8 @@
         </div>
 
         <div id="quiz-result-screen" class="menu-card" style="display: none; max-width: 600px;">
-            <h2 class="menu-title" style="font-size: 2.2rem;">รายงานสถานะผู้โดยสาร ✈️📡</h2>
-            <p class="menu-subtitle" style="margin-bottom: 24px;">สรุปภารกิจความทรงจำและความแม่นยำบนเที่ยวบินนี้</p>
+            <h2 id="result-title" class="menu-title" style="font-size: 2.2rem;">รายงานสถานะผู้โดยสาร ✈️📡</h2>
+            <p id="result-subtitle" class="menu-subtitle" style="margin-bottom: 24px;">สรุปภารกิจความทรงจำและความแม่นยำบนเที่ยวบินนี้</p>
 
             <div class="result-inner-card">
                 <div id="result-badge" class="result-rank-badge"></div>
@@ -94,20 +105,20 @@
                 <p id="result-feedback" class="result-feedback-text"></p>
             </div>
 
-            <button class="menu-btn btn-answer" style="width: 100%; margin-top: 12px; cursor: pointer;"
+            <button id="show-answer-btn" class="menu-btn btn-answer" style="width: 100%; margin-top: 12px; cursor: pointer;"
                 onclick="showAnswerKey()">ดูเฉลยทุกข้อ 📋</button>
-            <button class="menu-btn btn-quote" style="width: 100%; margin-top: 12px; cursor: pointer;"
+            <button id="retry-btn" class="menu-btn btn-quote" style="width: 100%; margin-top: 12px; cursor: pointer;"
                 onclick="resetQuiz()">ทำแบบทดสอบอีกครั้ง 🔄</button>
         </div>
 
         <div id="quiz-answer-screen" class="answer-screen-wrapper" style="display: none;">
             <div class="answer-screen-header menu-card" style="max-width: 750px; margin-bottom: 20px;">
-                <h2 class="menu-title" style="font-size: 2rem;">เฉลยข้อสอบ 📋</h2>
-                <p class="menu-subtitle">ตรวจสอบคำตอบที่ถูกต้องของแต่ละข้อ</p>
+                <h2 id="answer-title" class="menu-title" style="font-size: 2rem;">เฉลยข้อสอบ 📋</h2>
+                <p id="answer-subtitle" class="menu-subtitle">ตรวจสอบคำตอบที่ถูกต้องของแต่ละข้อ</p>
                 <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; justify-content: center;">
-                    <button class="menu-btn btn-answer" style="flex: 1; min-width: 160px; cursor: pointer;"
+                    <button id="back-to-result-btn" class="menu-btn btn-answer" style="flex: 1; min-width: 160px; cursor: pointer;"
                         onclick="document.getElementById('quiz-answer-screen').style.display='none'; document.getElementById('quiz-result-screen').style.display='block';">← กลับผลลัพธ์</button>
-                    <button class="menu-btn btn-quote" style="flex: 1; min-width: 160px; cursor: pointer;"
+                    <button id="answer-retry-btn" class="menu-btn btn-quote" style="flex: 1; min-width: 160px; cursor: pointer;"
                         onclick="resetQuiz()">ทำแบบทดสอบอีกครั้ง 🔄</button>
                 </div>
             </div>
@@ -116,23 +127,6 @@
 
     </div>
     
-
-    <div id="captcha-modal" class="captcha-overlay" style="display: none;">
-        <div class="captcha-box">
-            <div class="captcha-flex-wrapper">
-                <div class="captcha-image-wrapper">
-                    <span class="captcha-text-distort">เตนิวเป็นแฟนกัน</span>
-                </div>
-                <div class="captcha-tools">
-                    <button class="captcha-tool-btn" type="button" onclick="alert('ชัดเจนขนาดนี้ยังต้องรีเฟรซอีกหรอคะ 55555555')">🔄</button>
-                    <button class="captcha-tool-btn" type="button" onclick="alert('อ่านพร้อมกันนะคะะ เต-นิว-เป็น-แฟน-กัน!')">🔊</button>
-                </div>
-            </div>
-            <p class="captcha-instruction">Type the word above</p>
-            <input type="text" id="captcha-input" placeholder="" autocomplete="off">
-            <button id="captcha-verify-btn" class="captcha-verify-btn">Verify</button>
-        </div>
-    </div>
 
     <script>
         const canvas = document.getElementById('particle-canvas');
