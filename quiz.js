@@ -816,10 +816,15 @@ function loadQuestion() {
 
     if (questionImgEl) {
         if (currentQuiz.image && currentQuiz.image !== "") {
-            questionImgEl.src = currentQuiz.image;
             questionImgEl.style.display = "block";
+            questionImgEl.style.opacity = "0";
+            questionImgEl.onload = () => { questionImgEl.style.opacity = "1"; };
+            questionImgEl.onerror = () => { questionImgEl.style.opacity = "1"; };
+            questionImgEl.src = currentQuiz.image;
         } else {
             questionImgEl.style.display = "none";
+            questionImgEl.onload = null;
+            questionImgEl.onerror = null;
         }
     }
 
