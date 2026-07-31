@@ -951,8 +951,8 @@ function checkAnswer(selectedIndex) {
 
     if (isCorrect) {
         if (currentMode === "image") {
-            const BASE_PER_Q = 60 / activeQuizSet.length;
-            const BONUS_PER_Q = 40 / activeQuizSet.length;
+            const BASE_PER_Q = 70 / activeQuizSet.length;
+            const BONUS_PER_Q = 30 / activeQuizSet.length;
             const bonusRatio = Math.min(timeAtAnswer, TIME_LIMIT - 10) / (TIME_LIMIT - 10);
             const earned = BASE_PER_Q + bonusRatio * BONUS_PER_Q;
             imageScore += earned;
