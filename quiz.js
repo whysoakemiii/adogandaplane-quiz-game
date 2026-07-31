@@ -951,9 +951,12 @@ function checkAnswer(selectedIndex) {
 
     if (isCorrect) {
         if (currentMode === "image") {
-            imageScore += timeAtAnswer;
+            const BASE_PER_Q = 60 / activeQuizSet.length;
+            const BONUS_PER_Q = 40 / activeQuizSet.length;
+            const earned = BASE_PER_Q + (timeAtAnswer / TIME_LIMIT) * BONUS_PER_Q;
+            imageScore += earned;
             updateScoreDisplay();
-            showScorePopup(timeAtAnswer);
+            showScorePopup(earned);
         } else {
             score++;
         }
@@ -966,16 +969,15 @@ function checkAnswer(selectedIndex) {
     }, 1200);
 }
 
-function showScorePopup(timeAtAnswer) {
-    const maxPossible = activeQuizSet.length * TIME_LIMIT;
-    const pointsEarned = Math.round((timeAtAnswer / maxPossible) * 100);
+function showScorePopup(earned) {
+    const pointsEarned = Math.round(earned);
 
     const timerBadge = document.querySelector('.timer-badge');
     const rect = timerBadge ? timerBadge.getBoundingClientRect() : null;
 
     const popup = document.createElement('div');
     popup.classList.add('score-popup');
-    popup.textContent = pointsEarned > 0 ? `+${pointsEarned} ⭐` : `+0`;
+    popup.textContent = `+${pointsEarned} ⭐`;
 
     if (rect) {
         popup.style.left = `${rect.left + rect.width / 2}px`;
@@ -1005,8 +1007,7 @@ function showAnswerFeedback(selectedIndex) {
 function updateScoreDisplay() {
     const el = document.getElementById('current-score-display');
     if (!el) return;
-    const maxPossible = activeQuizSet.length * TIME_LIMIT;
-    el.innerText = Math.round((imageScore / maxPossible) * 100);
+    el.innerText = Math.round(imageScore);
 }
 
 function showResult() {
@@ -1019,9 +1020,7 @@ function showResult() {
     let badgeColor = "#39b54a";
 
     if (currentMode === "image") {
-        // คะแนนเต็ม = จำนวนข้อ x TIME_LIMIT normalize เป็น 100
-        const maxPossible = activeQuizSet.length * TIME_LIMIT;
-        const displayScore = Math.round((imageScore / maxPossible) * 100);
+        const displayScore = Math.round(imageScore);
         scorePercentage = displayScore;
 
         if (finalScoreEl) finalScoreEl.innerText = displayScore;
